@@ -1,0 +1,2 @@
+TEXT
+root: ${fs_free /} | home: ${fs_free /home/}

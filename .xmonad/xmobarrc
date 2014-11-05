@@ -1,0 +1,18 @@
+Config {
+         font =         "xft:Bitstream Vera Sans Mono:size=14:bold:antialias=true"
+       , bgColor =      "black"
+       , fgColor =      "#646464"
+       , position =     Top
+       , border =       BottomB
+       , borderColor =  "#646464"
+       commands = [
+                Run Com "conky" ["-q", "-i", "1"] "conky" 600,
+                Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10,
+                Run Memory ["-t","Mem: <usedratio>%"] 10,
+                Run Date "%a %b %d %k:%M" "date" 10,
+                Run StdinReader
+                ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader% }{ %conky% | %cpu% | %memory% | <fc=#ee9a00>%date%</fc>"
+}
