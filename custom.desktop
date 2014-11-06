@@ -1,0 +1,6 @@
+# place in /usr/share/xsessions/custom.desktop
+[Desktop Entry]
+Name=Custom
+Comment=Custom Session to run ~./.xsession
+Exec=/home/simon/.xsession
+X-Ubuntu-Gettext-Domain=<gnome-session-3.0>
