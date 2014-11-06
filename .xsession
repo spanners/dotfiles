@@ -16,4 +16,5 @@ fi
 xsetroot -cursor_name left_ptr
 
 exec xautolock -time 10 -locker slock &
+exec feh --bg-fill ~/Dropbox/pictures/wallpapers/do_your_work_dont_be_stupid.jpg &
 exec xmonad
