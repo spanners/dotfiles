@@ -34,7 +34,7 @@ myClickJustFocuses = False
 
 -- Width of the window border in pixels.
 --
-myBorderWidth   = 2
+myBorderWidth   = 3
 
 -- modMask lets you specify which modkey you want to use. The default
 -- is mod1Mask ("left alt").  You may also consider using mod3Mask
@@ -69,7 +69,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
 
     -- launch dmenu
-    , ((modm,               xK_p     ), spawn "exe=`menu_path | yeganesh` && eval \"exec $exe\"")
+    , ((modm,               xK_p     ), spawn "exe=`menu_path | yeganesh -- -b -fn '-xos4-terminus-*-*-*-*-22-*-*-*-*-*-*-*'` && eval \"exec $exe\"")
 
     -- close focused window
     , ((modm .|. shiftMask, xK_c     ), kill)
