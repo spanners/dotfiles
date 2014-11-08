@@ -61,3 +61,6 @@ au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsInfo<CR>
 
 " pointfree
 autocmd BufEnter *.hs set formatprg=pointfree
+
+" mutt
+au BufRead /tmp/mutt-* set tw=72

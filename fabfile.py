@@ -41,7 +41,7 @@ vim_bundles = [
 
 def apt_get():
     local('sudo apt-get update')
-    local('sudo apt-get install ruby ruby-dev zsh tk vim-gtk wget curl cabal-install rxvt-unicode xmonad xmobar suckless-tools xautolock feh tmux conky vlc thunar thunar-volman p7zip wxgtk2.8 unrar unzip keepassx happy libssl-dev mono-dmcs xdotool xclip')
+    local('sudo apt-get install ruby ruby-dev zsh tk vim-gtk wget curl cabal-install rxvt-unicode xmonad xmobar suckless-tools xautolock feh tmux mutt conky vlc thunar thunar-volman p7zip wxgtk2.8 unrar unzip keepassx happy libssl-dev mono-dmcs xdotool xclip')
 
 def cabal():
     local('cabal update')
