@@ -64,3 +64,8 @@ autocmd BufEnter *.hs set formatprg=pointfree
 
 " mutt
 au BufRead /tmp/mutt-* set tw=72
+
+" UTF-8 for the win
+set enc=utf-8
+set fileencoding=utf-8
+set fileencodings=ucs-bom,utf8,prc
