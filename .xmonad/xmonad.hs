@@ -132,7 +132,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm              , xK_q     ), spawn "xmonad --recompile; xmonad --restart")
 
     -- lock the screen
-    , ((modm,               xK_l     ), spawn "slock")
+    , ((modm .|. shiftMask, xK_l     ), spawn "slock")
     ]
     ++
 
