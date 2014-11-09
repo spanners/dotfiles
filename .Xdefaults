@@ -1,14 +1,17 @@
 URxvt*transparent: true
 URxvt*tintColor: Gray
-#URxvt*shading: 40
+URxvt*shading: 40
 URxvt*saveLines: 12000
 URxvt*foreground: White
 URxvt*background: Black
-URxvt*font: xft:DejaVu Sans Mono:pixelsize=16:antialias=true:hinting=true
-URxvt*boldFont: xft:DejaVu Sans Mono:bold:pixelsize=16:antialias=true:hinting=true
+URxvt*font: xft:DejaVu Sans Mono:pixelsize=24:antialias=true:hinting=true
+URxvt*boldFont: xft:DejaVu Sans Mono:bold:pixelsize=24:antialias=true:hinting=true
 URxvt*color4: RoyalBlue
 URxvt*color12: RoyalBlue
 URxvt*scrollBar: false
 URxvt*scrollBar_right: true
 URxvt*scrollstyle: rxvt
 URxvt.letterSpace: -1
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/firefox
+URxvt.matcher.button: 1
