@@ -1,0 +1,48 @@
+# # Calculation:
+#
+# 1. Maximum upload speed
+#
+#     Use the following formula to determine your optimal upload speed…
+#
+#     80% of your maximum upload speed
+# 
+# 2. Maximum download speed
+# 
+#     95% of your maximum download speed
+# 
+# 3. Maximum connected peers per torrent
+# 
+#     upload speed * 1.3
+# 
+# 4. Maximum upload slots
+# 
+#     1 + (upload speed / 6)
+
+min_peers = 100
+max_peers = 1248
+
+min_peers_seed = 10
+max_peers_seed = 300
+
+max_uploads = 209
+
+download_rate = 1425
+upload_rate = 960
+
+directory = /home/simon/torrents/
+session = /home/simon/.session
+schedule = watch_directory,5,5,load_start=/home/simon/Downloads/*.torrent
+schedule = untied_directory,5,5,stop_untied=
+schedule = tied_directory,5,5,stop_untied=
+schedule = low_diskspace,5,60,close_low_diskspace=100M
+
+port_range = 49164-49164
+
+check_hash = yes
+
+encryption = require,require_RC4,allow_incoming,try_outgoing
+
+dht = auto
+dht_port = 6881
+peer_exchange = yes
+
