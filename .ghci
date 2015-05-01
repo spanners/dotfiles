@@ -1,0 +1,99 @@
+-- Language Pragmas
+:set -XConstraintKinds
+:set -XBangPatterns
+:set -XDataKinds
+-- :set -XDeriveAnyClass
+:set -XDeriveDataTypeable
+:set -XDeriveFoldable
+:set -XDeriveFunctor
+:set -XDeriveGeneric
+:set -XDeriveTraversable
+:set -XDefaultSignatures
+:set -XEmptyCase
+:set -XFunctionalDependencies
+:set -XGADTs
+:set -XGeneralizedNewtypeDeriving
+:set -XInstanceSigs
+:set -XImplicitParams
+:set -XImpredicativeTypes
+:set -XLambdaCase
+:set -XLiberalTypeSynonyms
+:set -XMagicHash
+:set -XMultiParamTypeClasses
+:set -XMultiWayIf
+:set -XMonadComprehensions
+:set -XNamedFieldPuns
+:set -XNamedWildCards
+:set -XNumDecimals
+-- DEPRECATED IN 7.10: :set -XNullaryTypeClasses
+:set -XNoMonomorphismRestriction
+-- :set -XOverloadedStrings
+:set -XParallelListComp
+:set -XPartialTypeSignatures
+:set -XPatternSynonyms
+:set -XPolyKinds
+:set -XPostfixOperators
+:set -XRankNTypes
+:set -XRecordWildCards
+:set -XRecursiveDo
+:set -XRoleAnnotations
+:set -XScopedTypeVariables
+:set -XStandaloneDeriving
+:set -XTemplateHaskell
+:set -XTupleSections
+:set -XTypeFamilies
+:set -XTypeOperators
+:set -XUnboxedTuples
+:set -XUndecidableInstances
+:set -XUnicodeSyntax
+:set -XViewPatterns
+-- Prompts
+:set prompt  "ghci> "
+:set prompt2 "ghci| "
+import Data.List
+import Test.QuickCheck hiding ((.&.), (><))
+import Control.Monad
+import Control.Applicative
+import Data.Ord
+import Data.Function
+import Text.Printf
+import Control.Concurrent
+import Data.Char
+import Data.Maybe
+import Control.Arrow ((>>>), (<<<))
+import qualified Data.Foldable as F
+import Data.Foldable (fold, foldMap, for_)
+import qualified Data.Traversable as T
+import Control.Monad.Identity
+-- :set -lgsl
+:def qc \c -> return $ ":m + Test.QuickCheck.Property \n:m + Test.QuickCheck.Modifiers \nTest.QuickCheck.quickCheck (" ++ 
+c ++ ") \n:m - Test.QuickCheck.Property\n:m - Test.QuickCheck.Modifiers"
+:def vc \c -> return $ ":m + Test.QuickCheck.Property \n:m + Test.QuickCheck.Modifiers \nTest.QuickCheck.verboseCheck (" 
+++ c ++ ") \n:m - Test.QuickCheck.Property\n:m - Test.QuickCheck.Modifiers"
+-- :t return `asTypeIn` (Right >>=)
+--   ⇒ Either a b -> b -> Either a b
+-- :t return `asTypeIn` ([] >>=)
+--   ⇒  a -> [a]
+let a `asTypeIn` f = a where _ = f a
+-- :t (>>=) `asAppliedTo` Left undefined
+--   ⇒ Either a1 a -> (a -> Either a1 b) -> Either a1 b
+-- :t (>>=) `asAppliedTo` []
+--   ⇒ [a] -> (a -> [b]) -> [b]
+let f `asAppliedTo` x = f `asTypeIn` (\g -> g x)
+:def hoogle \s -> return $ ":! ~/.cabal/bin/hoogle --count=15 \"" ++ s ++ "\""
+:def pl \s -> return $ ":! ~/.cabal/bin/pointfree \"" ++ s ++ "\""
+let { sleep :: Double -> IO (); sleep = threadDelay . round . (10^6 *) }
+let { (|>) :: b -> (b -> c) -> c ; (|>) = flip ($) }
+let { (.:) :: (c → d) → (a → b → c) → a → b → d ; f .: g = (f .) . g }
+--   ( exp1 !.! exp2 )
+let { (!.!) :: a -> b -> (a,b) ; a !.! b = a `seq` b `seq` (a,b) }
+let u = undefined
+let (·) = (.)
+let (◇) = (Data.Monoid.<>)
+-- :set -Wall
+:set -w
+:set +m
+:set -fno-warn-unused-imports
+:set -fno-warn-unused-do-bind
+:set -fdefer-type-errors
+:set -fwarn-typed-holes
