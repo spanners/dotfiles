@@ -99,6 +99,7 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH=~/bin:$PATH
 export GOROOT=/usr/local/go
+#export GOROOT=/usr/lib/go
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 export PATH=/home/simon/gnat/install/compiler/bin:$PATH
@@ -114,6 +115,12 @@ export EDITOR=$VISUAL
 export SPARK_LEMMAS_OBJECT_DIR=$HOME/lemma_obj
 export IMPACTDB_EDITOR=$VISUAL
 export IMPACTDB_PRODUCT=spark
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/simon/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/simon/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/simon/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/simon/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
 # OPAM configuration
 . /home/simon/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true

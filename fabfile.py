@@ -38,7 +38,7 @@ vim_bundles = [
 def apt_get():
     local('sudo apt-get update')
     local('sudo apt-get upgrade')
-    local('sudo apt-get install zsh vim wget curl rxvt-unicode suckless-tools xautolock feh tmux mutt mpd ncmpcpp vlc p7zip unrar unzip keepassx xdotool xclip rtorrent diffpdf xfce4')
+    local('sudo apt-get install zsh vim wget curl rxvt-unicode suckless-tools xautolock feh tmux mutt mpd ncmpcpp vlc p7zip unrar unzip htop keepassx xdotool xclip rtorrent diffpdf xfce4')
 
 # Not using Haskell at the moment
 #def cabal():

@@ -1,4 +1,4 @@
-URxvt*geometry: 240x84
+URxvt*tintColor: Gray
 URxvt*loginShell: true
 URxvt*scrollColor: #777777
 URxvt*scrollstyle: plain
@@ -7,9 +7,9 @@ URxvt*scrollTtyOutput: false
 URxvt*scrollWithBuffer: false
 URxvt*secondaryScreen: true
 URxvt*secondaryScroll: true
-Urxvt*skipScroll: true
+URxvt*skipScroll: true
 URxvt*scrollBar: false
-uRxvt*scrollBar_right: false
+URxvt*scrollBar_right: false
 URxvt*scrollBar_floating: false
 URxvt*fading: 30
 URxvt*utmpInhibit: false
@@ -21,10 +21,12 @@ URxvt*background: Black
 URxvt*foreground: White
 URxvt*colorUL: yellow
 URxvt*underlineColor: yellow
-Urxvt*font: xft:DejaVu Sans Mono:pixelsize=24:antialias=true:hinting=true
-URxvt*BoldFont: xft:DejaVu Sans Mono:bold:pixelsize=24:antialias=true:hinting=true
-URxvt.letterSpace: -1
-URxvt.lineSpace: 10
+URxvt*color4: RoyalBlue
+URxvt*color12: RoyalBlue
+URxvt*font: xft:DejaVu Sans Mono:pixelsize=24:antialias=true:hinting=true
+URxvt*boldFont: xft:DejaVu Sans Mono:bold:pixelsize=24:antialias=true:hinting=true
+!URxvt.letterSpace: -1
+!URxvt.lineSpace: 5
 URxvt*saveLines: 0
 URxvt*buffered: true
 URxvt*hold: false
