@@ -2,11 +2,16 @@ set nocompatible
 execute pathogen#infect()
 
 " Set the Solarized color scheme
-syntax on
+syntax enable
 filetype plugin indent on
-set background=light
-let g:solarized_termcolors=256
-colorscheme solarized
+set t_Co=256
+colorscheme koehler
+
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+endif
 
 " General settings
 let mapleader=','

@@ -1,17 +1,35 @@
-URxvt*transparent: true
-URxvt*tintColor: Gray
-URxvt*shading: 40
-URxvt*saveLines: 12000
-URxvt*foreground: White
-URxvt*background: Black
-URxvt*font: xft:DejaVu Sans Mono:pixelsize=24:antialias=true:hinting=true
-URxvt*boldFont: xft:DejaVu Sans Mono:bold:pixelsize=24:antialias=true:hinting=true
-URxvt*color4: RoyalBlue
-URxvt*color12: RoyalBlue
+URxvt*geometry: 240x84
+URxvt*loginShell: true
+URxvt*scrollColor: #777777
+URxvt*scrollstyle: plain
+URxvt*scrollTtyKeypress: true
+URxvt*scrollTtyOutput: false
+URxvt*scrollWithBuffer: false
+URxvt*secondaryScreen: true
+URxvt*secondaryScroll: true
+Urxvt*skipScroll: true
 URxvt*scrollBar: false
-URxvt*scrollBar_right: true
-URxvt*scrollstyle: rxvt
+uRxvt*scrollBar_right: false
+URxvt*scrollBar_floating: false
+URxvt*fading: 30
+URxvt*utmpInhibit: false
+URxvt*urgentOnBell: false
+URxvt*visualBell: true
+URxvt*mapAlert: true
+URxvt*mouseWheelScrollPage: false
+URxvt*background: Black
+URxvt*foreground: White
+URxvt*colorUL: yellow
+URxvt*underlineColor: yellow
+Urxvt*font: xft:DejaVu Sans Mono:pixelsize=24:antialias=true:hinting=true
+URxvt*BoldFont: xft:DejaVu Sans Mono:bold:pixelsize=24:antialias=true:hinting=true
 URxvt.letterSpace: -1
-URxvt.perl-ext-common: default,matcher
-URxvt.url-launcher: /usr/bin/firefox
-URxvt.matcher.button: 1
+URxvt.lineSpace: 10
+URxvt*saveLines: 0
+URxvt*buffered: true
+URxvt*hold: false
+URxvt*internalBorder:
+URxvt*print-pipe: cat > $HOME/$(echo urxvt.dump.$(date +'%Y%M%d%H%m%S'))
+URxvt*perl-ext-common:
+URxvt*perl-ext:
+URxvt*termName: rxvt-unicode

@@ -2,10 +2,6 @@ from fabric.api import local
 
 vim_bundles = [
     {
-        'git': 'git://github.com/altercation/vim-colors-solarized.git',
-        'path': '~/.vim/bundle/vim-colors-solarized'
-    },
-    {
         'git': 'git://github.com/mileszs/ack.vim.git',
         'path': '~/.vim/bundle/ack.vim'
     },
@@ -41,12 +37,14 @@ vim_bundles = [
 
 def apt_get():
     local('sudo apt-get update')
-    local('sudo apt-get install ruby ruby-dev zsh tk vim-gtk wget curl cabal-install rxvt-unicode xmonad xmobar suckless-tools xautolock feh tmux mutt conky mpd ncmpcpp vlc thunar thunar-volman p7zip wxgtk2.8 unrar unzip keepassx happy libssl-dev mono-dmcs xdotool xcliprtorrent')
+    local('sudo apt-get upgrade')
+    local('sudo apt-get install zsh vim wget curl rxvt-unicode suckless-tools xautolock feh tmux mutt mpd ncmpcpp vlc p7zip unrar unzip keepassx xdotool xclip rtorrent diffpdf')
 
-def cabal():
-    local('cabal update')
-    local('sudo cabal install yeganesh --global')
-    local('sudo cabal install hoogle hsenv ghc-mod hdevtools hlint pointfree')
+# Not using Haskell at the moment
+#def cabal():
+#    local('cabal update')
+#    local('sudo cabal install yeganesh --global')
+#    local('sudo cabal install hoogle hsenv ghc-mod hdevtools hlint pointfree')
 
 def oh_my_zsh():
     local('curl -L http://install.ohmyz.sh | sh')
