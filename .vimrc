@@ -1,11 +1,20 @@
 set nocompatible
 execute pathogen#infect()
 
-" Set the Solarized color scheme
+" Enable syntax highlighting
 syntax enable
+
+" Auto-indentation (I think?)
 filetype plugin indent on
+
+" 256-colour terminal
 set t_Co=256
-colorscheme koehler
+
+" Colourscheme 'koehler' looks good in situ
+"colorscheme koehler
+
+" Colourscheme 'evening' looks good over ssh tmux
+colorscheme evening
 
 if has('gui_running')
     set background=light
@@ -13,23 +22,39 @@ else
     set background=dark
 endif
 
+" ----------------
 " General settings
+" ----------------
+
 let mapleader=','
 
 set nobackup
 set nowritebackup
 
-set nu
+" Show line numbers
+set number
 
+" Highlight search
 set hlsearch
 set incsearch
 
+" Expand tabs into spaces
 set expandtab
+
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set autoindent
 set backspace=indent,eol,start
+
+" UTF-8 yeahhhhhh
+set enc=utf-8
+set fileencoding=utf-8
+set fileencodings=ucs-bom,utf8,prc
+
+" ---------------
+" Plugin settings
+" ---------------
 
 " Powerline
 set laststatus=2
@@ -55,22 +80,5 @@ map <silent> <Leader>e :Errors<CR>
 map <Leader>s :SyntasticToggleMode<CR>
 let g:syntastic_auto_loc_list = 1
 
-" GHC mod
-map <silent> tu :call GHC_BrowseAll()<CR>
-map <silent> tw :call GHC_ShowType(1)<CR>
-
-" hdevtools
-au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
-au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
-au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsInfo<CR>
-
-" pointfree
-autocmd BufEnter *.hs set formatprg=pointfree
-
-" mutt
+" Email composition with mutt
 au BufRead /tmp/mutt-* set tw=72
-
-" UTF-8 for the win
-set enc=utf-8
-set fileencoding=utf-8
-set fileencodings=ucs-bom,utf8,prc
