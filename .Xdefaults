@@ -32,6 +32,8 @@ URxvt*buffered: true
 URxvt*hold: false
 URxvt*internalBorder:
 URxvt*print-pipe: cat > $HOME/$(echo urxvt.dump.$(date +'%Y%M%d%H%m%S'))
-URxvt*perl-ext-common:
-URxvt*perl-ext:
 URxvt*termName: rxvt-unicode
+! Open URLs when clicked
+URxvt.perl-ext-common:  default,matcher,clipboard
+URxvt.matcher.button:   1
+URxvt.urlLauncher:      firefox
