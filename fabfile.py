@@ -40,12 +40,6 @@ def apt_get():
     local('sudo apt-get upgrade')
     local('sudo apt-get install zsh vim wget curl kitty suckless-tools xautolock feh tmux mutt mpd ncmpcpp vlc p7zip unrar unzip htop keepassx xdotool xclip rtorrent diffpdf xfce4')
 
-# Not using Haskell at the moment
-#def cabal():
-#    local('cabal update')
-#    local('sudo cabal install yeganesh --global')
-#    local('sudo cabal install hoogle hsenv ghc-mod hdevtools hlint pointfree')
-
 def oh_my_zsh():
     local('curl -L http://install.ohmyz.sh | sh')
     local('cp ~/.zshrc.pre-oh-my-zsh ~/.zshrc')
