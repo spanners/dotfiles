@@ -2,43 +2,17 @@ from fabric.api import local
 
 vim_bundles = [
     {
-        'git': 'git://github.com/mileszs/ack.vim.git',
-        'path': '~/.vim/bundle/ack.vim'
-    },
-    {
-        'git': 'git://github.com/tpope/vim-fugitive.git',
-        'path': '~/.vim/bundle/vim-fugitive'
-    },
-    {
-        'git': 'git://github.com/sjl/gundo.vim.git',
-        'path': '~/.vim/bundle/gundo.vim'
-    },
-    {
-        'git': 'git://github.com/ervandew/supertab.git',
-        'path': '~/.vim/bundle/supertab'
-    },
-    {
-        'git': 'git://github.com/Raimondi/delimitMate.git',
-        'path': '~/.vim/bundle/delimitMate'
-    },
-    {
-        'git': 'git://github.com/docunext/closetag.vim.git',
-        'path': '~/.vim/bundle/closetag.vim'
-    },
-    {
-        'git': 'git://github.com/majutsushi/tagbar.git',
-        'path': '~/.vim/bundle/tagbar'
-    },
-    {
-	'git': 'git://github.com/scrooloose/syntastic.git',
-	'path': '~/.vim/bundle/syntastic'
+        'git': 'git://github.com/fatih/vim-go.git',
+        'path': '~/.vim/bundle/vim-go'
     }
 ]
 
 def apt_get():
     local('sudo apt-get update')
     local('sudo apt-get upgrade')
-    local('sudo apt-get install zsh vim wget curl kitty suckless-tools xautolock feh tmux mutt mpd ncmpcpp vlc p7zip unrar unzip htop keepassx xdotool xclip rtorrent diffpdf xfce4 redshift-gtk')
+    local('sudo apt-get install zsh vim wget curl kitty suckless-tools \
+           xautolock feh tmux mutt mpd ncmpcpp vlc p7zip unrar unzip htop \
+           keepassx xdotool xclip rtorrent diffpdf xfce4 redshift-gtk')
 
 def oh_my_zsh():
     local('curl -L http://install.ohmyz.sh | sh')
