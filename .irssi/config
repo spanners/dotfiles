@@ -1,0 +1,11 @@
+settings = {
+  "fe-text" = { actlist_sort = "refnum"; };
+  core = {
+    real_name = "anon";
+    user_name = "anon";
+    nick = "anon";
+  };
+};
+ignores = (
+  { mask = "some_bastard"; level = "ALL"; },
+);
