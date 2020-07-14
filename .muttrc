@@ -133,3 +133,51 @@ set pgp_good_sign="^\\[GNUPG:\\] GOODSIG"
 # pattern to verify a decryption occurred
 set pgp_decryption_okay="^\\[GNUPG:\\] DECRYPTION_OKAY"
 
+# Colorscheme
+
+# basic colors ---------------------------------------------------------
+color normal        white           default
+color error         red             default
+color tilde         white           default
+color message       cyan            default
+color markers       red             white
+color attachment    white           default
+color search        brightmagenta   default
+color indicator     black           yellow
+color tree          green           default
+
+# sidebarh
+color sidebar_new   default cyan
+
+# index ----------------------------------------------------------------
+
+color index         brightred       default         "~A"    # all messages
+color index         brightred       default         "~E"    # expired messages
+color index         yellow          default         "~N"    # new messages
+color index         cyan            default         "~O"    # old messages
+color index         brightmagenta   default         "~Q"    # messages that have been replied to
+color index         white           default         "~R"    # read messages
+color index         brightwhite     default         "~U"    # unread messages
+color index         brightyellow    default         "~v"    # messages part of a collapsed thread
+color index         brightyellow    default         "~P"    # messages from me
+color index         red             default         "~F"    # flagged messages
+color index         white           red             "~D"    # deleted messages
+
+# message headers ------------------------------------------------------
+
+color hdrdefault    brightwhite     default
+color header        brightyellow    default         "^(From)"
+color header        cyan            default         "^(Subject)"
+
+# body -----------------------------------------------------------------
+
+color quoted        cyan            default
+color quoted1       green           default
+color quoted2       yellow          default
+color quoted3       red             default
+color quoted4       brightred       default
+
+color signature     white           default
+color bold          white           default
+color underline     white           default
+color normal        default         default
