@@ -82,3 +82,6 @@ let g:syntastic_auto_loc_list = 1
 
 " Email composition with mutt
 au BufRead /tmp/mutt-* set tw=72
+
+" Mouse scrolling
+set mouse=a

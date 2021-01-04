@@ -11,7 +11,7 @@ def apt_get():
     local('sudo apt-get update')
     local('sudo apt-get upgrade')
     local('sudo apt-get install zsh vim wget curl kitty suckless-tools \
-           xautolock feh tmux neomutt mpd ncmpcpp vlc p7zip unrar unzip htop \
+           xautolock feh tmux neomutt mpd ncmpcpp vlc unp htop \
            keepassx xdotool xclip rtorrent diffpdf xfce4 redshift-gtk')
 
 def oh_my_zsh():
