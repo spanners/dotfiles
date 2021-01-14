@@ -85,3 +85,6 @@ au BufRead /tmp/mutt-* set tw=72
 
 " Mouse scrolling
 set mouse=a
+
+" Strip trailing whitespace
+autocmd FileType c,cpp,java,php,python,ada autocmd BufWritePre <buffer> %s/\s\+$//e
