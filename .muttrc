@@ -4,11 +4,11 @@ set from = "user@server.com" # put actual email address here
 set realname = "Simon Buist"
 set imap_user = "user" # put actual username here
 set imap_pass = "pass" # put actual password here
-set folder = "imaps://imap.eu.server.com:993" # put actual URL here
+set folder = "imaps://imap.gmail.com:993" # put actual url here
 set spoolfile = "+INBOX"
 set header_cache = ~/.mutt/cache/headers
 set message_cachedir = ~/.mutt/cache/bodies
-set smtp_url = "smtps://user@smtp.eu.server.com:465/" # put actual URL here
+set smtp_url = "smtps://user@server.com@smtp.gmail.com:465/" # put actual url here
 set smtp_pass = "pass" # same as imap_pass
 
 # Maildir
