@@ -88,3 +88,7 @@ set mouse=a
 
 " Strip trailing whitespace
 autocmd FileType c,cpp,java,php,python,ada autocmd BufWritePre <buffer> %s/\s\+$//e
+
+" Pasting as-is, disabling autoindentation.
+" I never want to have to type this again.
+set paste
