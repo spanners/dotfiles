@@ -91,4 +91,5 @@ autocmd FileType c,cpp,java,php,python,ada autocmd BufWritePre <buffer> %s/\s\+$
 
 " Pasting as-is, disabling autoindentation.
 " I never want to have to type this again.
-set paste
+" UPDATE: it seems this messes up expandtab...
+"set paste

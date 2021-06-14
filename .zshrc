@@ -47,11 +47,13 @@ MY_LANGKIT=${MY_GNAT}/langkit_support
 MY_LIBADALANG=${MY_GNAT}/libadalang
 MY_GNATCOLL=${MY_GNAT}/gnatcoll
 
-export PATH=${MY_GNAT}/gtkada:$PATH
-export PATH=${MY_GNAT}/gnatcoll:$PATH
-export PATH=${MY_GNAT}/xmlada:$PATH
-export PATH=${MY_LANGKIT}:$PATH
-export PATH=${MY_LIBADALANG}/bin:$PATH
+#export PATH=${MY_GNAT}/gtkada:$PATH
+#export PATH=${MY_GNAT}/gnatcoll:$PATH
+#export PATH=${MY_GNAT}/xmlada:$PATH
+#export PATH=${MY_LANGKIT}:$PATH
+#export PATH=${MY_LIBADALANG}/bin:$PATH
+
+export PATH=${HOME}/.local/bin:$PATH
 
 export PATH=${MY_GNAT}/compiler/bin:$PATH # gnat, gcc
 export PATH=${MY_GNAT}/codepeer/bin:$PATH # codepeer
@@ -62,14 +64,8 @@ export PATH=${MY_GNAT}/gps/bin:$PATH # gnatstudio
 export TEXINPUTS=/home/simon/latex//: # altran latex stuff
 export TEXFONTS=/home/simon/latex//: # altran latex stuff
 
-# Uncomment if using libadalang dev environment
-#
-#export GPR_PROJECT_PATH=${MY_LANGKIT}/share/gpr:${MY_LIBADALANG}/share/gpr:${MY_GNATCOLL}/share/gpr
-#export LD_LIBRARY_PATH=${MY_LANGKIT}/lib:${MY_LIBADALANG}/lib:${MY_GNATCOLL}/lib:${MY_GNAT}/compiler/lib
-#
-# WARNING: SPARK2014 will not build if ~/gnat/install/gnatcoll/share/gpr is out
-#  of sync with GAIA wavefront GNAT compiler.
-
+export GPR_PROJECT_PATH=${MY_LANGKIT}/share/gpr:${MY_LIBADALANG}/share/gpr:${MY_GNATCOLL}/share/gpr
+export LD_LIBRARY_PATH=${MY_LANGKIT}/lib:${MY_LIBADALANG}/lib:${MY_GNATCOLL}/lib:${MY_GNAT}/compiler/lib
 export SPARK_LEMMAS_OBJECT_DIR=$HOME/lemma_obj
 export IMPACTDB_EDITOR=$VISUAL
 export IMPACTDB_PRODUCT=spark
