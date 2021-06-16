@@ -64,8 +64,8 @@ export PATH=${MY_GNAT}/gps/bin:$PATH # gnatstudio
 export TEXINPUTS=/home/simon/latex//: # altran latex stuff
 export TEXFONTS=/home/simon/latex//: # altran latex stuff
 
-export GPR_PROJECT_PATH=${MY_LANGKIT}/share/gpr:${MY_LIBADALANG}/share/gpr:${MY_GNATCOLL}/share/gpr
-export LD_LIBRARY_PATH=${MY_LANGKIT}/lib:${MY_LIBADALANG}/lib:${MY_GNATCOLL}/lib:${MY_GNAT}/compiler/lib
+#export GPR_PROJECT_PATH=${MY_LANGKIT}/share/gpr:${MY_LIBADALANG}/share/gpr:${MY_GNATCOLL}/share/gpr
+export LD_LIBRARY_PATH=${MY_GNAT}/compiler/lib
 export SPARK_LEMMAS_OBJECT_DIR=$HOME/lemma_obj
 export IMPACTDB_EDITOR=$VISUAL
 export IMPACTDB_PRODUCT=spark
