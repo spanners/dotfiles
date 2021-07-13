@@ -22,6 +22,10 @@ else
     set background=dark
 endif
 
+
+" Show [current-match/number-of-matches] in a /search
+set shortmess-=S
+
 " ----------------
 " General settings
 " ----------------
