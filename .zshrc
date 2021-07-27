@@ -40,31 +40,23 @@ export PATH=/home/simon/bin:$PATH
 #################
 
 # GNAT
-MY_GNAT=/home/simon/gnat/install
-
-# Langkit, libadalang
-MY_LANGKIT=${MY_GNAT}/langkit_support
-MY_LIBADALANG=${MY_GNAT}/libadalang
-MY_GNATCOLL=${MY_GNAT}/gnatcoll
-
-#export PATH=${MY_GNAT}/gtkada:$PATH
-#export PATH=${MY_GNAT}/gnatcoll:$PATH
-#export PATH=${MY_GNAT}/xmlada:$PATH
-#export PATH=${MY_LANGKIT}:$PATH
-#export PATH=${MY_LIBADALANG}/bin:$PATH
+MY_GNAT=${HOME}/gnat/install
+MY_SPARK=${HOME}/spark2014/install
 
 export PATH=${HOME}/.local/bin:$PATH
 
 export PATH=${MY_GNAT}/compiler/bin:$PATH # gnat, gcc
 export PATH=${MY_GNAT}/codepeer/bin:$PATH # codepeer
 export PATH=${MY_GNAT}/provers/bin:$PATH # cvc4, z3
-export PATH=/home/simon/spark2014/install/bin:$PATH # gnatprove built from your local development
+
+export PATH=${MY_SPARK}/bin:$PATH # gnatprove built from your local development environment
+export PATH=${MY_SPARK}/libexec/spark/bin:$PATH # gnatwhy3 built from your local development environment
+
 export PATH=${MY_GNAT}/gps/bin:$PATH # gnatstudio
 
 export TEXINPUTS=/home/simon/latex//: # altran latex stuff
 export TEXFONTS=/home/simon/latex//: # altran latex stuff
 
-#export GPR_PROJECT_PATH=${MY_LANGKIT}/share/gpr:${MY_LIBADALANG}/share/gpr:${MY_GNATCOLL}/share/gpr
 export LD_LIBRARY_PATH=${MY_GNAT}/compiler/lib
 export SPARK_LEMMAS_OBJECT_DIR=$HOME/lemma_obj
 export IMPACTDB_EDITOR=$VISUAL
