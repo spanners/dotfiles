@@ -12,6 +12,7 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load?
 plugins=(
   git
+  bgnotify
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -30,10 +31,10 @@ TREE_IGNORE="cache|log|logs|node_modules|vendor"
 alias ls=' exa --group-directories-first'
 alias la=' ls -a'
 alias ll=' ls --git -l'
-alias lt=' ls --tree -D -L 2 -I ${TREE_IGNORE}'
-alias ltt=' ls --tree -D -L 3 -I ${TREE_IGNORE}'
-alias lttt=' ls --tree -D -L 4 -I ${TREE_IGNORE}'
-alias ltttt=' ls --tree -D -L 5 -I ${TREE_IGNORE}'
+alias lt=' ls --tree -L 2 -I ${TREE_IGNORE}'
+alias ltt=' ls --tree -L 3 -I ${TREE_IGNORE}'
+alias lttt=' ls --tree -L 4 -I ${TREE_IGNORE}'
+alias ltttt=' ls --tree -L 5 -I ${TREE_IGNORE}'
 
 # I use Vim
 export VISUAL=vim
@@ -60,11 +61,12 @@ export PATH=${MY_GNAT}/provers/bin:$PATH # cvc4, z3
 
 export PATH=${MY_SPARK}/bin:$PATH # gnatprove built from your local development environment
 export PATH=${MY_SPARK}/libexec/spark/bin:$PATH # gnatwhy3 built from your local development environment
+export GPR_PROJECT_PATH=${MY_SPARK}/lib/gnat # include these GPR files as dependencies
 
 export PATH=${MY_GNAT}/gps/bin:$PATH # gnatstudio
 
-export TEXINPUTS=/home/simon/latex//: # altran latex stuff
-export TEXFONTS=/home/simon/latex//: # altran latex stuff
+export TEXINPUTS=${HOME}/latex//: # altran latex stuff
+export TEXFONTS=${HOME}/latex//: # altran latex stuff
 
 export LD_LIBRARY_PATH=${MY_GNAT}/compiler/lib
 export SPARK_LEMMAS_OBJECT_DIR=$HOME/lemma_obj
@@ -82,7 +84,7 @@ function mk_default_gpr {
     # test.gpr
     echo "project Test is" > test.gpr
     echo "  package Compiler is" >> test.gpr
-    echo '    for Default_Switches ("Ada") use ("-gnatdk", "-gnato13", "-gnatws");' >> test.gpr
+    echo '    for Default_Switches ("Ada") use ("-gnatdk", "-gnat2020", "-gnatws");' >> test.gpr
     echo '    for Local_Configuration_Pragmas use "test.adc";' >> test.gpr
     echo "  end Compiler;" >> test.gpr
     echo "end Test;" >> test.gpr
