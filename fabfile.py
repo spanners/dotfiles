@@ -13,7 +13,8 @@ def apt_get():
     # neovim instead of vim?
     local('sudo apt-get install zsh vim wget curl kitty suckless-tools \
            xautolock feh tmux neomutt mpd ncmpcpp vlc unp htop exa \
-           keepassx xdotool xclip rtorrent diffpdf xfce4 redshift-gtk')
+           keepassxc xdotool xclip rtorrent diffpdf xfce4 redshift-gtk \
+           graphviz')
 
 def oh_my_zsh():
     local('curl -L http://install.ohmyz.sh | sh')
