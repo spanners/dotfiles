@@ -12,7 +12,7 @@ def apt_get():
     local('sudo apt-get upgrade')
     # neovim instead of vim?
     local('sudo apt-get install zsh vim wget curl kitty suckless-tools \
-           xautolock feh tmux neomutt mpd ncmpcpp vlc unp htop exa \
+           xautolock feh tmux neomutt mpd ncmpcpp vlc unp htop \
            keepassxc xdotool xclip rtorrent diffpdf xfce4 redshift-gtk \
            graphviz')
 

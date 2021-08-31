@@ -26,16 +26,6 @@ source $ZSH/oh-my-zsh.sh
 alias ooo="libreoffice"
 alias pdf="mupdf"
 
-# fancy ls (using exa)
-TREE_IGNORE="cache|log|logs|node_modules|vendor"
-alias ls=' exa --group-directories-first'
-alias la=' ls -a'
-alias ll=' ls --git -l'
-alias lt=' ls --tree -L 2 -I ${TREE_IGNORE}'
-alias ltt=' ls --tree -L 3 -I ${TREE_IGNORE}'
-alias lttt=' ls --tree -L 4 -I ${TREE_IGNORE}'
-alias ltttt=' ls --tree -L 5 -I ${TREE_IGNORE}'
-
 # I use Vim
 export VISUAL=vim
 export EDITOR=$VISUAL
