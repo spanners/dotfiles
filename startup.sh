@@ -2,10 +2,9 @@
 
 eval $(ssh-agent)
 ssh-add
-tmux new -d 'mutt' \; \
-  new-window -n 'make' -d 'cd ~/spark2014; zsh -i' \; \
-  new-window -n 's2014' -d 'vim /home/simon/spark2014/src/flow/flow.adb +279' \; \
-  new-window -n 'test' -d 'cd /home/simon/spark2014/testsuite/gnatprove/tests/S406-003__flow-show-gg; zsh -i' \; \
-  new-window -n 'plugin' -d 'cd /home/simon/git/adacore/gps/share/plug-ins; zsh -i' \; \
+tmux new -n 'make' -d 'cd ~/spark2014; zsh -i' \; \
+  new-window -n 'test' -d 'cd /home/simon/spark2014/testsuite/gnatprove/; zsh -i' \; \
+  new-window -n 'U824-022' -d 'cd /home/simon/spark2014/testsuite/gnatprove/tests/U824-022__flow_detect_loop_exit; zsh -i' \; \
+  new-window -n 'gps' -d 'cd /home/simon/spark2014/; zsh -i' \; \
   attach \;
 exit 0
