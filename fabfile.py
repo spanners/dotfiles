@@ -16,6 +16,23 @@ def apt_get():
            keepassxc xdotool xclip rtorrent diffpdf xfce4 redshift-gtk \
            graphviz')
 
+def sparkdev12_nvidia():
+    """
+    SPARKDEV12 machine has the following graphics card:
+
+    NVIDIA GK208 [GeForce GT 710B] (rev a1)
+    Supported by default drivers and legacy driver series 390.
+    It is recommended to install the
+        nvidia-driver
+        package.
+    """
+    local('sudo apt-get update')
+    local('sudo apt-get upgrade')
+    local('sudo apt-get install nvidia-detect linux-headers-amd64 \
+           nvidia-driver firmware-misc-nonfree nvidia-xconfig')
+    local('nvidia-detect')
+    local('sudo nvidia-xconfig')
+
 def oh_my_zsh():
     local('curl -L http://install.ohmyz.sh | sh')
     local('cp ~/.zshrc.pre-oh-my-zsh ~/.zshrc')
