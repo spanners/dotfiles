@@ -1,4 +1,5 @@
-from fabric.api import local
+from fabric.api import local, abort
+from fabric.contrib.console import confirm
 
 vim_bundles = [
     {
@@ -10,13 +11,12 @@ vim_bundles = [
 def apt_get():
     local('sudo apt-get update')
     local('sudo apt-get upgrade')
-    # neovim instead of vim?
-    local('sudo apt-get install zsh vim wget curl kitty suckless-tools \
+    local('sudo apt-get install zsh neovim wget curl kitty suckless-tools \
            xautolock feh tmux neomutt mpd ncmpcpp vlc unp htop \
            keepassxc xdotool xclip rtorrent diffpdf xfce4 redshift-gtk \
            graphviz')
 
-def sparkdev12_nvidia():
+def sparkdev12_nvidia_1():
     """
     SPARKDEV12 machine has the following graphics card:
 
@@ -28,9 +28,20 @@ def sparkdev12_nvidia():
     """
     local('sudo apt-get update')
     local('sudo apt-get upgrade')
-    local('sudo apt-get install nvidia-detect linux-headers-amd64 \
-           nvidia-driver firmware-misc-nonfree nvidia-xconfig')
-    local('nvidia-detect')
+    local('sudo apt-get install linux-headers-amd64 nvidia-detect')
+    result = local('nvidia-detect', capture=True)
+    if "nvidia-driver" not in result.stdout \
+            and not confirm("nvidia-driver not suggested by "
+                            "nvidia-detect. Continue to install "
+                            "anyway?"):
+        abort("Aborting at user request")
+    local('sudo apt-get install firmware-misc-nonfree')
+    local('sudo apt-get install nvidia-driver nvidia-xconfig')
+    print("You should run fab sparkdev12_nvidia_2 after reboot")
+    if confirm("It is recommended to reboot now. Reboot?"):
+        local("sudo reboot")
+
+def sparkdev12_nvidia_2():
     local('sudo nvidia-xconfig')
 
 def oh_my_zsh():
