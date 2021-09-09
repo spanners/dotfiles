@@ -15,7 +15,7 @@ plugins=(
   bgnotify
 )
 
-source $ZSH/oh-my-zsh.sh
+source ${ZSH}/oh-my-zsh.sh
 
 #####################
 #
@@ -28,10 +28,10 @@ alias pdf="mupdf"
 
 # I use Vim
 export VISUAL=vim
-export EDITOR=$VISUAL
+export EDITOR=${VISUAL}
 
 # Put handmade tools on my PATH
-export PATH=/home/simon/bin:$PATH
+export PATH=${HOME}/bin:${PATH}
 
 #################
 #
@@ -43,24 +43,24 @@ export PATH=/home/simon/bin:$PATH
 MY_GNAT=${HOME}/gnat/install
 MY_SPARK=${HOME}/spark2014/install
 
-export PATH=${HOME}/.local/bin:$PATH
+export PATH=${HOME}/.local/bin:${PATH}
 
-export PATH=${MY_GNAT}/compiler/bin:$PATH # gnat, gcc
-export PATH=${MY_GNAT}/codepeer/bin:$PATH # codepeer
-export PATH=${MY_GNAT}/provers/bin:$PATH # cvc4, z3
+export PATH=${MY_GNAT}/compiler/bin:${PATH} # gnat, gcc
+export PATH=${MY_GNAT}/codepeer/bin:${PATH} # codepeer
+export PATH=${MY_GNAT}/provers/bin:${PATH} # cvc4, z3
 
-export PATH=${MY_SPARK}/bin:$PATH # gnatprove built from your local development environment
-export PATH=${MY_SPARK}/libexec/spark/bin:$PATH # gnatwhy3 built from your local development environment
+export PATH=${MY_SPARK}/bin:${PATH} # gnatprove built from your local development environment
+export PATH=${MY_SPARK}/libexec/spark/bin:${PATH} # gnatwhy3 built from your local development environment
 export GPR_PROJECT_PATH=${MY_SPARK}/lib/gnat # include these GPR files as dependencies
 
-export PATH=${MY_GNAT}/gps/bin:$PATH # gnatstudio
+export PATH=${MY_GNAT}/gps/bin:${PATH} # gnatstudio
 
 export TEXINPUTS=${HOME}/latex//: # altran latex stuff
 export TEXFONTS=${HOME}/latex//: # altran latex stuff
 
-export LD_LIBRARY_PATH=${MY_GNAT}/compiler/lib
-export SPARK_LEMMAS_OBJECT_DIR=$HOME/lemma_obj
-export IMPACTDB_EDITOR=$VISUAL
+export LD_LIBRARY_PATH=${MY_GNAT}/compiler/lib:${LD_LIBRARY_PATH}
+export SPARK_LEMMAS_OBJECT_DIR=${HOME}/lemma_obj
+export IMPACTDB_EDITOR=${VISUAL}
 export IMPACTDB_PRODUCT=spark
 
 # OPAM configuration
