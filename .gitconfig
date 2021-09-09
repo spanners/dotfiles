@@ -4,7 +4,6 @@
 [push]
 	default = simple
 [alias]
-    work = !~/bin/git-as.sh ~/.ssh/work/id_rsa
     co = checkout
     ci = commit
     st = status
