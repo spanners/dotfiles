@@ -8,6 +8,7 @@ Steps to get a basic install going:
 1. `fab apt_get`
 1. `fab oh_my_zsh`
 1. `fab install_vim`
+1. `fab sparkdev12_nvidia`
 
 You can update all the Vim bundles using
 * `fab update_vim`
