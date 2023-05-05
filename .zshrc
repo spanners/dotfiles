@@ -81,6 +81,12 @@ function mk_default_gpr {
 }
 
 
+# SVN diff with colour, piped into GNU Less
+function svndiff () {
+    svn diff $@ | colordiff | less -R;
+}
+
+
 #######################
 #
 # Google Cloud Platform
@@ -92,12 +98,3 @@ if [ -f '/home/simon/.local/share/google-cloud-sdk/path.zsh.inc' ]; then . '/hom
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/simon/.local/share/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/simon/.local/share/google-cloud-sdk/completion.zsh.inc'; fi
-
-###########
-#
-# Travis CI
-#
-###########
-
-# added by travis gem
-[ ! -s /home/simon/.travis/travis.sh ] || source /home/simon/.travis/travis.sh
