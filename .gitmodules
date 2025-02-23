@@ -1,0 +1,3 @@
+[submodule "gnat-gdb-scripts"]
+	path = gnat-gdb-scripts
+	url = https://github.com/AdaCore/gnat-gdb-scripts

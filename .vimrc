@@ -97,3 +97,5 @@ autocmd FileType c,cpp,java,php,python,ada autocmd BufWritePre <buffer> %s/\s\+$
 " I never want to have to type this again.
 " UPDATE: it seems this messes up expandtab...
 "set paste
+
+set belloff=all
